@@ -10,11 +10,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tb_game")
+@Table(name = "tb_game") //<- Da biblioteca JPA utilizado para Customizar o nome da tabela no banco de dados
+ //o nome dessa tabela no banco de dados.
 public class Game {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id //<- Incluido que essa variavel é um ID
+	@GeneratedValue(strategy = GenerationType.IDENTITY) //<- Utilisado para criar o indentificador do cadastro auto incremento.
 	private Long id;
 	private String title;
 	

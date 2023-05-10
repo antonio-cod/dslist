@@ -13,10 +13,10 @@ import com.devsuperior.dslist.dto.GameMinDTO;
 import com.devsuperior.dslist.services.GameService;
 
 @RestController
-@RequestMapping(value = "/games")
+@RequestMapping(value = "/games") //Busca a requisição na classe: Games
 public class GameController {
 
-	@Autowired
+	@Autowired // Injetando a Classe: Serviço no controlador
 	private GameService gameService;	
 
 	@GetMapping(value = "/{id}")
@@ -25,7 +25,7 @@ public class GameController {
 		return result;
 	}
 
-	@GetMapping
+	@GetMapping //Anotação utilizado para fazer pesquisa
 	public List<GameMinDTO> findAll() {
 		List<GameMinDTO> result = gameService.findAll();
 		return result;
