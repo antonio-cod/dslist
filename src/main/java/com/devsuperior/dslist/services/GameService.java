@@ -25,7 +25,7 @@ public class GameService {
 		return new GameDTO(result);
 	}
 	
-	@Transactional(readOnly = true)
+	@Transactional(readOnly = true)//Anotação para não bloquear a consulta texto no banco
 	public List<GameMinDTO> findAll() {
 		List<Game> result = gameRepository.findAll();
 		return result.stream().map(GameMinDTO::new).toList();
